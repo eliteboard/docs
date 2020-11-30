@@ -12,7 +12,7 @@
     3) Enable the power supply of the eLITe-board over the USB-C connector
     4) Start the bmflash tool and make sure that it recognizes the external Black Magic Probe
     5) Flash both firmware files to the eLITe-board
-* Verify that the debugger is working
+* Verify that the internal debugger is working
     1) Disconnect the external Black Magic Probe adapter
     2) Power cycle the eLITe-board. (Re-)connecting it to the computer should show a virtual serial port. Also the "bmflash" tool should recognize the *internal* Black Magic Probe which is now available on the eLITe-board
 
