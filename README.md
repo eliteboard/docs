@@ -33,3 +33,12 @@ The [Thonny IDE](https://thonny.org/) offers features like a file explorer or an
 3. Select the correct port. This can be tricky, because the eLITe-board appears as multiple devices. Simple trial and error for all available options is the fastest method to find the correct port right now (in later versions a device name will appear for the different ports which simplifies things a lot).
 4. If you found the correct port you should see the MicroPython prompt on the Shell tab (MicroPython + version string and some additional hardware information)
 5. You can now enter commands into the Shell tab, or you can run Python files on the board. If your project consists of multiple files, make sure that modules etc. are available on the eLITe-board memory (either flash or SD-card). Local files on your PC cannot be found by the MicroPython running on the eLITe-board.
+
+## Tips for MicroPython
+The board appears as mass storage device and this function can be used to upload *.py files to the board.  
+It might be required to perform a soft-reset (press CTRL-D) before the files become visible. A list of files can be printed by
+```
+import os
+os.listdir()
+```
+Execute a file by ```import filename``` (without the py-extension)
