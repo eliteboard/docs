@@ -27,7 +27,7 @@
 ## Tools for development in C
 
 ## Tools for development in MicroPython
-The [Thonny IDE](https://thonny.org/) offers features like a file explorer or an integrated plotter, which are very useful when working with Micropython devices. To use Thonny with MicroPython on the eLITe-board the following settings need to be made:
+The [Thonny IDE](https://thonny.org/) offers features like a file explorer or an integrated plotter, which are very useful when working with MicroPython devices. To use Thonny with MicroPython on the eLITe-board the following settings need to be made:
 1. Go to Run > Select Interpreter and select the Interpreter tab.
 2. Choose MicroPython (generic)
 3. Select the correct port. This can be tricky, because the eLITe-board appears as multiple devices. Simple trial and error for all available options is the fastest method to find the correct port right now (in later versions a device name will appear for the different ports which simplifies things a lot).
