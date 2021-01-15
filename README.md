@@ -30,7 +30,7 @@
 The [Thonny IDE](https://thonny.org/) offers features like a file explorer or an integrated plotter, which are very useful when working with MicroPython devices. To use Thonny with MicroPython on the eLITe-board the following settings need to be made:
 1. Go to Run > Select Interpreter and select the Interpreter tab.
 2. Choose MicroPython (generic)
-3. Select the correct port. This can be tricky, because the eLITe-board appears as multiple devices. Simple trial and error for all available options is the fastest method to find the correct port right now (in later versions a device name will appear for the different ports which simplifies things a lot).
+3. Select the correct port. This can be tricky, because the eLITe-board appears as multiple devices. Simple trial and error for all available options is the fastest method to find the correct port right now (in non-Windows versions a device name will appear for the different ports which simplifies things a lot).
 4. If you found the correct port you should see the MicroPython prompt on the Shell tab (MicroPython + version string and some additional hardware information)
 5. You can now enter commands into the Shell tab, or you can run Python files on the board. If your project consists of multiple files, make sure that modules etc. are available on the eLITe-board memory (either flash or SD-card). Local files on your PC cannot be found by the MicroPython running on the eLITe-board.
 
