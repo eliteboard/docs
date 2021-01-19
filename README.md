@@ -1,9 +1,11 @@
 # eLITe-Board Software Documentation
 
 ## Prerequisites for own Builds
-* Toolchain:
+
 
 ## Tools for development in C
+* Toolchain:
+* VSCodium IDE:
 
 ## Tools for development in MicroPython
 The [Thonny IDE](https://thonny.org/) offers features like a file explorer or an integrated plotter, which are very useful when working with MicroPython devices. To use Thonny with MicroPython on the eLITe-board the following settings need to be made:
@@ -23,6 +25,28 @@ os.listdir()
 Execute a file by ```import filename``` (without the py-extension)
 
 # eLITe-Board Hardware Documentation
+
+## Pinout
+The pinout of the board looks like this:
+![Pinout of eLITe-Board](/images/pinout.svg "Pinout of eLITe-Board")
+
+Note that these pin descriptions are only valid if you use the pin configuration as it is also used in the [template project](https://github.com/eliteboard/vscode_c_examples/-/tree/master/eliteboard_v1/Template) and NOT if you use the default configuration of CubeMX. The available ```template.ioc``` file should be used as a starting point when you want to create a new project from scratch. 
+## I2C Addresses of Onboard Peripherals
+Note, that these are 8-bit addresses (including the R/W bit). Shift right by one bit if you need the 7-bit address.
+
+| Designator | Manufacturer Identifier | Description                 | Read Address | Write Address | Read Address | Write Address |
+| -------------- | --------------------------- | ------------------------------- | ---------------- | ----------------- | ---------------- | ----------------- |
+| IC19           | M24512-DFMC6TG              | I2C EEPROM                      | 0xA1             | 0xA0              | 0xA3             | 0xA2              |
+| IC8            | DS2482S-100+T&R             | I2C One Wire Bridge             | 0x31             | 0x30              | \-               | \-                |
+| IC2            | LT3582EUD#PBF               | Programmable DC/DC Converter    | 0x63             | 0x62              | \-               | \-                |
+| IC23           | TCA9534APWR                 | Port Expander ADC2              | 0x41             | 0x40              | \-               | \-                |
+| IC6            | WM8731CLSEFLR               | Audio Codec                     | 0x35             | 0x34              | \-               | \-                |
+| IC14           | LSM6DSOXTR                  | 3D Accelerometer + 3D Gyroscope | 0xD7             | 0xD6              | \-               | \-                |
+| IC10           | HTS221TR                    | Relative Humidity + Temperature | 0xBF             | 0xBE              | \-               | \-                |
+| IC12           | LIS3MDLTR                   | 3D Magnetometer                 | 0x3D             | 0x3C              | \-               | \-                |
+| IC13           | LPS22HHTR                   | Barometer                       | 0xBB             | 0xBA              | \-               | \-                |
+| IC11           | ISL28023FR60Z-T7A           | Digital Power Monitor           | 0x8B             | 0x8A              | \-               | \-                |
+| IC20           | STUSB4500LQTR               | USB-C Controller                | 0x51             | 0x50              | \-               | \-                |
 
 # Flashing Guide
 ## Initial Flashing and Testing
