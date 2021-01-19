@@ -1,8 +1,47 @@
 # eLITe-Board Software Documentation
 
 ## Tools for Development in C
-* Toolchain:
-* VSCodium IDE:
+It is recommended that you install
+* A toolchain:
+* Build tools like ```make```
+* An IDE like VSCodium (or VSCode). Theia could be an option later
+
+### Manual installation of the development environment
+Development is done using Visual Studio Code
+* Install VSCodium or VSCode
+* Then you have to install the following extensions:
+    * Cortex-Debug
+        * https://open-vsx.org/extension/marus25/cortex-debug
+        * https://marketplace.visualstudio.com/items?itemName=marus25.cortex-debug
+        * https://github.com/Marus/cortex-debug
+        * https://marcelball.ca/projects/cortex-debug/
+    * C/C++ (could be already built in)
+        * https://open-vsx.org/extension/vscode/cpp
+        * https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools
+        * https://github.com/Microsoft/vscode-cpptools
+
+* You need the ```make``` command to process the Makefile(s):
+    * Windows: install MinGW https://sourceforge.net/projects/mingw-w64/
+    * MacOS: Install Xcode Command Line Tools (CLT) using ```xcode-select --install```
+    * Linux: It is very likely that the ```make``` command is already included
+
+* You need a suitable GCC Compiler
+    * Windows versions can be found here:
+        * directly from arm (bug when creating bin/hex in windows under version 2018q4, https://bugs.launchpad.net/gcc-arm-embedded/+bug/1810274):
+          - https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads
+        * alternative build probably without the bug: https://github.com/gnu-mcu-eclipse/arm-none-eabi-gcc/releases/tag/v8.2.1-1.2
+    * MacOS: Install Homebrew (follow instructions available on brew.sh). Then run ```brew install homebrew/cask/gcc-arm-embedded```
+    * Linux: Also see https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads
+
+* You need to define an environmental variable ```ELITEBOARDDIR``` which points to your gcc installation
+    * Check your OS documentation for instructions
+
+* Further comments:
+The MacOS descriptions are taken from: https://github.com/glegrain/STM32-with-macOS#0---installing-the-toolchain
+
+To use COM port numbers above 9 you have to use the syntax 
+```\\.\COM10*/``` otherwise you can simply use "COMx" in the ```"BMPGDBSerialPort"```
+setting within the ```.vscode/launch.json``` file.
 
 ## Tools for Development in MicroPython
 The [Thonny IDE](https://thonny.org/) offers features like a file explorer or an integrated plotter, which are very useful when working with MicroPython devices. To use Thonny with MicroPython on the eLITe-board the following settings need to be made:
