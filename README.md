@@ -1,13 +1,10 @@
 # eLITe-Board Software Documentation
 
-## Prerequisites for own Builds
-
-
-## Tools for development in C
+## Tools for Development in C
 * Toolchain:
 * VSCodium IDE:
 
-## Tools for development in MicroPython
+## Tools for Development in MicroPython
 The [Thonny IDE](https://thonny.org/) offers features like a file explorer or an integrated plotter, which are very useful when working with MicroPython devices. To use Thonny with MicroPython on the eLITe-board the following settings need to be made:
 1. Go to Run > Select Interpreter and select the Interpreter tab.
 2. Choose MicroPython (generic)
