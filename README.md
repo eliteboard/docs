@@ -2,7 +2,7 @@
 
 ## Tools for Development in C
 It is recommended that you install
-* A toolchain:
+* A toolchain
 * Build tools like ```make```
 * An IDE like VSCodium (or VSCode). Theia could be an option later
 
@@ -23,7 +23,7 @@ Development is done using Visual Studio Code
 * You need the ```make``` command to process the Makefile(s):
     * Windows: install MinGW https://sourceforge.net/projects/mingw-w64/
     * MacOS: Install Xcode Command Line Tools (CLT) using ```xcode-select --install```
-    * Linux: It is very likely that the ```make``` command is already included
+    * Linux: It is very likely that the ```make``` command is already included in your distribution
 
 * You need a suitable GCC Compiler
     * Windows versions can be found here:
@@ -39,7 +39,7 @@ Development is done using Visual Studio Code
 * Further comments:
 The MacOS descriptions are taken from: https://github.com/glegrain/STM32-with-macOS#0---installing-the-toolchain
 
-To use COM port numbers above 9 you have to use the syntax 
+To use COM port numbers above 9 in Windows you have to use the syntax 
 ```\\.\COM10*/``` otherwise you can simply use "COMx" in the ```"BMPGDBSerialPort"```
 setting within the ```.vscode/launch.json``` file.
 
@@ -66,7 +66,8 @@ Execute a file by ```import filename``` (without the py-extension)
 The pinout of the board looks like this:
 ![Pinout of eLITe-Board](/images/pinout.svg "Pinout of eLITe-Board")
 
-Note that these pin descriptions are only valid if you use the pin configuration as it is also used in the [template project](https://github.com/eliteboard/vscode_c_examples/-/tree/master/eliteboard_v1/Template) and NOT if you use the default configuration of CubeMX. The available ```template.ioc``` file should be used as a starting point when you want to create a new project from scratch. 
+Note that these pin descriptions are only valid if you use the pin configuration as it is also used in the [template project](https://github.com/eliteboard/vscode_c_examples/-/tree/master/eliteboard_v1/Template) and NOT if you use the default configuration of CubeMX. The available ```template.ioc``` file should be used as a starting point when you want to create a new project from scratch.
+
 ## I2C Addresses of Onboard Peripherals
 Note, that these are 8-bit addresses (including the R/W bit). Shift right by one bit if you need the 7-bit address.
 
