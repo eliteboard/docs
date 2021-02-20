@@ -66,7 +66,7 @@ Execute a file by ```import filename``` (without the py-extension)
 The pinout of the board looks like this:
 ![Pinout of eLITe-Board](/images/pinout.svg "Pinout of eLITe-Board")
 
-Note that these pin descriptions are only valid if you use the pin configuration as it is also used in the [template project](https://github.com/eliteboard/vscode_c_examples/-/tree/master/eliteboard_v1/Template) and NOT if you use the default configuration of CubeMX. The available ```template.ioc``` file should be used as a starting point when you want to create a new project from scratch.
+Note that these pin descriptions are only valid if you use the pin configuration as it is also used in the [template project](https://github.com/eliteboard/baremetal_c/tree/master/Template) and NOT if you use the default configuration of CubeMX. The available ```template.ioc``` file should be used as a starting point when you want to create a new project from scratch.
 
 ## I2C Addresses of Onboard Peripherals
 Note, that these are 8-bit addresses (including the R/W bit). Shift right by one bit if you need the 7-bit address.
