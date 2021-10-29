@@ -99,11 +99,12 @@ Note, that these are 8-bit addresses (including the R/W bit). Shift right by one
 	
 ### Flash eLITe-Connect
 * Install esptool in a Python installation using pip install ```python -m pip install git+git://github.com/eliteboard/esptool.git@master``` (has to be run in an Anaconda prompt or the like). Make sure to NOT use the official version!
-* Make sure the the Micropython on the eLITe-Board is recent enough. Then you can ```import eliteconnect_uart_passthrough``` and run ```eliteconnect_pass_through()```. Note that the command will run forever and the only possibility to cancel it is pressing Ctrl+C.
+* Make sure the the Micropython on the eLITe-Board is recent enough. Then you can execute ```from eliteconnect_uart_passthrough import *``` and run ```eliteconnect_pass_through()```. Note that the command will run forever and the only possibility to cancel it is pressing Ctrl+C.
 * As long as ```eliteconnect_pass_through()``` is running you will be able to access the UART of eLITe-Connect using the virtual UART of the eLITe-Board
 * You can then flash eLITe-Connect with either:
-	1) A MicroPython firmware by running the commands to erase the flash and to upload the *.bin file as described at https://github.com/rf-eng/micropython/releases/tag/v20210527_eliteconnect (adjust your COM-port accordingly) or
-	2) An ESP32-AT firmware	(TODO, details will follow)
+	1) A MicroPython firmware (from https://github.com/rf-eng/micropython/releases) or
+	2) An ESP32-AT firmware	(from https://github.com/eliteboard/esp-at/releases)
+* In both cases run the commands to erase the flash and to upload the *.bin file as described at https://github.com/rf-eng/micropython/releases/tag/v20210527_eliteconnect (adjust your COM-port accordingly)
 
 ### Only for Advanced Users: Flash the onboard debugger unit (*internal* Black Magic Probe)
 * First, you need to flash the onboard debugger of the eLITe-board using an *external* Black Magic Probe adapter.
