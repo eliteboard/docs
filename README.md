@@ -85,10 +85,27 @@ Note, that these are 8-bit addresses (including the R/W bit). Shift right by one
 | IC11           | ISL28023FR60Z-T7A           | Digital Power Monitor           | 0x8B             | 0x8A              | \-               | \-                |
 | IC20           | STUSB4500LQTR               | USB-C Controller                | 0x51             | 0x50              | \-               | \-                |
 
-# Flashing Guide
+# Flashing Guides
 ## Initial Flashing and Testing
 * If you want to avoid installing a toolchain, you can use the "bmflash" tool. Prebuilt binaries are available for Linux and Windows under the [releases section](https://github.com/rf-eng/Black-Magic-Probe-Book/releases/latest) of its repository.
-### Flash the onboard debugger unit (*internal* Black Magic Probe)
+    
+### Flash MicroPython for the eLITe-Board and run self tests
+* Flash a current MicroPython firmware using the internal Black Magic Probe
+    1) Make sure that the internal debugger is working (see [here](https://github.com/rf-eng/eliteboard_docs#flash-the-onboard-debugger-unit-internal-black-magic-probe))
+    2) Download a MicroPython release (firmware_eliteboard.elf) from [here](https://github.com/rf-eng/micropython/releases/latest)
+    3) Flash firmware_eliteboard.elf to the eLITe-board using the bmflash tool (see the [releases section](https://github.com/rf-eng/Black-Magic-Probe-Book/releases/latest) of the corresponding repository)
+* Run self tests
+    1) A self test script is available [here](https://github.com/rf-eng/eliteboard_upyscripts/blob/master/self_test.py)
+	
+### Flash eLITe-Connect
+* Install esptool in a Python installation using pip install ```python -m pip install git+git://github.com/eliteboard/esptool.git@master``` (has to be run in an Anaconda prompt or the like). Make sure to NOT use the official version!
+* Make sure the the Micropython on the eLITe-Board is recent enough. Then you can ```import eliteconnect_uart_passthrough``` and run ```eliteconnect_pass_through()```. Note that the command will run forever and the only possibility to cancel it is pressing Ctrl+C.
+* As long as ```eliteconnect_pass_through()``` is running you will be able to access the UART of eLITe-Connect using the virtual UART of the eLITe-Board
+* You can then flash eLITe-Connect with either:
+	1) A MicroPython firmware by running the commands to erase the flash and to upload the *.bin file as described at https://github.com/rf-eng/micropython/releases/tag/v20210527_eliteconnect (adjust your COM-port accordingly) or
+	2) An ESP32-AT firmware	(TODO, details will follow)
+
+### Only for Advanced Users: Flash the onboard debugger unit (*internal* Black Magic Probe)
 * First, you need to flash the onboard debugger of the eLITe-board using an *external* Black Magic Probe adapter.
     1) Download the firmware files (two *.elf files) for the onboard debugger from [here](https://github.com/rf-eng/blackmagic/releases/latest)
     2) Connect your external Black Magic Probe to your computer and to the tag connector on the eLITe-board
@@ -98,11 +115,3 @@ Note, that these are 8-bit addresses (including the R/W bit). Shift right by one
 * Verify that the internal debugger is working
     1) Disconnect the external Black Magic Probe adapter
     2) Power cycle the eLITe-board. (Re-)connecting it to the computer should show a virtual serial port. Also the "bmflash" tool should recognize the *internal* Black Magic Probe which is now available on the eLITe-board
-    
-### Flash MicroPython and run self tests
-* Flash a current MicroPython firmware using the internal Black Magic Probe
-    1) Make sure that the internal debugger is working (see [here](https://github.com/rf-eng/eliteboard_docs#flash-the-onboard-debugger-unit-internal-black-magic-probe))
-    2) Download a MicroPython release (firmware_eliteboard.elf) from [here](https://github.com/rf-eng/micropython/releases/latest)
-    3) Flash firmware_eliteboard.elf to the eLITe-board using the bmflash tool (see the [releases section](https://github.com/rf-eng/Black-Magic-Probe-Book/releases/latest) of the corresponding repository)
-* Run self tests
-    1) A self test script is available [here](https://github.com/rf-eng/eliteboard_upyscripts/blob/master/self_test.py)
