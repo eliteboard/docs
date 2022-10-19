@@ -94,7 +94,7 @@ Note, that these are 8-bit addresses (including the R/W bit). Shift right by one
     1) Make sure that the internal debugger is working (see [here](https://github.com/rf-eng/eliteboard_docs#flash-the-onboard-debugger-unit-internal-black-magic-probe))
     2) Download a MicroPython release (firmware_eliteboard.elf) from [here](https://github.com/rf-eng/micropython/releases/latest)
     3) Flash firmware_eliteboard.elf to the eLITe-board using the bmflash tool (see the [releases section](https://github.com/rf-eng/Black-Magic-Probe-Book/releases/latest) of the corresponding repository)
-        a) A problem might appear if an old version of MicroPython was used on the board before. In this case the flash partitioning needs to be rebuilt completely. This process can be only triggered by a complete "mass_erase" run from gdb (using the erase function from bmflash is not enough) with a subsequent flash of MicroPython followed by a reset of the board. Wait until the state of the seven-segment LEDs changes before continuing.
+    	* A problem might appear if an old version of MicroPython was used on the board before. In this case the flash partitioning needs to be rebuilt completely. This process can be only triggered by a complete "mass_erase" run from gdb (using the erase function from bmflash is not enough) with a subsequent flash of MicroPython followed by a reset of the board. Wait until the state of the seven-segment LEDs changes before continuing.
 * Run self tests
     1) A self test script is available [here](https://github.com/rf-eng/eliteboard_upyscripts/blob/master/self_test.py)
 	
