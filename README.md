@@ -36,7 +36,19 @@ Development is done using Visual Studio Code
 * Either
     * copy/move the previously installed versions of GCC (and MinGW) into a common directory which should then contain a folder ```gcc``` (and ```mingw```) or
     * create links to the original installation folders in the common directory
-* You need to define an environmental variable ```ELITEBOARDDIR``` which points the common directory containing gcc (and mingw if applicable)
+    * the directory structure should then look like:
+      ```
+      eliteboarddir/
+      ├─ gcc/
+      │  ├─ bin/      
+      │  ├─ arm-none-eabi/
+      │  ├─ .../
+      ├─ mingw/
+      │  ├─ bin/
+      │  ├─ etc/
+      │  ├─ .../
+      ```
+* You need to define an environmental variable ```ELITEBOARDDIR``` which points to the common directory containing gcc (and mingw if applicable)
 * Check your OS documentation for instructions
 
 * Further comments:
